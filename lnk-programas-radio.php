@@ -188,14 +188,21 @@ function lnk_programa_save_post_meta($id) {
                 return $id;
 
         // horarios
-        update_post_meta($id, 'lnk_programa_dias_1', $_POST['lnk_programa_dias_1']);
-        update_post_meta($id, 'lnk_programa_horarios_1', $_POST['lnk_programa_horarios_1']);
-        update_post_meta($id, 'lnk_programa_dias_2', $_POST['lnk_programa_dias_2']);
-        update_post_meta($id, 'lnk_programa_horarios_2', $_POST['lnk_programa_horarios_2']);
+        if(isset($_POST['lnk_programa_dias_1']))
+            update_post_meta($id, 'lnk_programa_dias_1', $_POST['lnk_programa_dias_1']);
+        if(isset($_POST['lnk_programa_horarios_1']))            
+            update_post_meta($id, 'lnk_programa_horarios_1', $_POST['lnk_programa_horarios_1']);
+        if(isset($_POST['lnk_programa_dias_2']))
+            update_post_meta($id, 'lnk_programa_dias_2', $_POST['lnk_programa_dias_2']);
+        if(isset($_POST['lnk_programa_horarios_2']))
+            update_post_meta($id, 'lnk_programa_horarios_2', $_POST['lnk_programa_horarios_2']);
         // equipo
-        update_post_meta($id, 'lnk_programa_conduccion', $_POST['lnk_programa_conduccion']);
-        update_post_meta($id, 'lnk_programa_produccion', $_POST['lnk_programa_produccion']);
-        update_post_meta($id, 'lnk_programa_operacion', $_POST['lnk_programa_operacion']);
+        if(isset($_POST['lnk_programa_conduccion']))
+            update_post_meta($id, 'lnk_programa_conduccion', $_POST['lnk_programa_conduccion']);
+        if(isset($_POST['lnk_programa_produccion']))
+            update_post_meta($id, 'lnk_programa_produccion', $_POST['lnk_programa_produccion']);
+        if(isset($_POST['lnk_programa_operacion']))
+            update_post_meta($id, 'lnk_programa_operacion', $_POST['lnk_programa_operacion']);
     }
 }
 add_action('save_post','lnk_programa_save_post_meta');
