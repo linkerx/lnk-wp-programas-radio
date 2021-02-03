@@ -196,31 +196,37 @@ function lnk_programa_redes_meta_box() {
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_facebook'>Facebook: </label>";
     $html .= "<input type='text' id='lnk_programa_redes_facebook' name='lnk_programa_redes_facebook' value='".$redes_facebook."' size='30' style='margin: 5px;'>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Dirección completa al perfil/página/grupo)</span>";
     $html .= "</div>";
 
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_instagram'>Instagram: </label>";
     $html .= "<input type='text' id='lnk_programa_redes_instagram' name='lnk_programa_redes_instagram' value='".$redes_instagram."' size='30' style='margin: 5px;'>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Dirección completa al perfil)</span>";
     $html .= "</div>";
 
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_youtube'>Youtube: </label>";
     $html .= "<input type='text' id='lnk_programa_redes_youtube' name='lnk_programa_redes_youtube' value='".$redes_youtube."' size='30' style='margin: 5px;'>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Dirección completa al canal)</span>";
     $html .= "</div>";
 
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_twitter'>Twitter: </label>";
     $html .= "<input type='text' id='lnk_programa_redes_twitter' name='lnk_programa_redes_twitter' value='".$redes_twitter."' size='30' style='margin: 5px;'>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Dirección completa al perfil)</span>";
     $html .= "</div>";
 
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_whatsapp'>Whatsapp: </label>";
-    $html .= "<input type='text' id='lnk_programa_redes_whatsapp' name='lnk_programa_redes_whatsapp' value='".$redes_whatsapp."' size='30' style='margin: 5px;'>";
+    $html .= "<input type='text' id='lnk_programa_redes_whatsapp' name='lnk_programa_redes_whatsapp' value='".$redes_whatsapp."' size='20' style='margin: 5px;'>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Número de teléfono)</span>";
     $html .= "</div>";
 
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_telegram'>Telegram: </label>";
-    $html .= "<input type='text' id='lnk_programa_redes_telegram' name='lnk_programa_redes_telegram' value='".$redes_telegram."' size='30' style='margin: 5px;'>";
+    $html .= "<input type='text' id='lnk_programa_redes_telegram' name='lnk_programa_redes_telegram' value='".$redes_telegram."' size='20' style='margin: 5px;'>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Nombre de Usuario)</span>";
     $html .= "</div>";
 
     $html .= "</div>";
