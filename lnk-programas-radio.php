@@ -128,6 +128,7 @@ function lnk_programa_custom_meta() {
     if($post->post_type == 'programa'){
         add_meta_box('lnk_programa_horarios',"Horarios", 'lnk_programa_horarios_meta_box', null, 'normal','core');
         add_meta_box('lnk_programa_equipo',"Equipo", 'lnk_programa_equipo_meta_box', null, 'normal','core');
+        add_meta_box('lnk_programa_redes',"Redes Sociales", 'lnk_programa_redes_meta_box', null, 'normal','core');
     }
 }
 add_action ('add_meta_boxes','lnk_programa_custom_meta');
@@ -179,6 +180,54 @@ function lnk_programa_equipo_meta_box() {
     echo $html;
 }
 
+
+function lnk_programa_redes_meta_box() {
+    global $post;
+
+    $redes_facebook = get_post_meta( $post->ID, 'lnk_programa_redes_facebook', true );
+    $redes_instagram = get_post_meta( $post->ID, 'lnk_programa_redes_instagram', true );
+    $redes_youtube = get_post_meta( $post->ID, 'lnk_programa_redes_youtube', true );
+    $redes_twitter = get_post_meta( $post->ID, 'lnk_programa_redes_twitter', true );
+    $redes_whatsapp = get_post_meta( $post->ID, 'lnk_programa_whatsapp', true );
+    $redes_telegram = get_post_meta( $post->ID, 'lnk_programa_telegram', true );
+        
+    $html = "<div class='redes_container'>";
+    
+    $html .= "<div class='redes_input' style='margin: 5px;'>";
+    $html .= "<label for='lnk_programa_redes_facebook'>Facebook: </label>";
+    $html .= "<input type='text' id='lnk_programa_redes_facebook' name='lnk_programa_redes_facebook' value='".$redes_facebook."' size='30' style='margin: 5px;'>";
+    $html .= "</div>";
+
+    $html .= "<div class='redes_input' style='margin: 5px;'>";
+    $html .= "<label for='lnk_programa_redes_instagram'>Instagram: </label>";
+    $html .= "<input type='text' id='lnk_programa_redes_instagram' name='lnk_programa_redes_instagram' value='".$redes_instagram."' size='30' style='margin: 5px;'>";
+    $html .= "</div>";
+
+    $html .= "<div class='redes_input' style='margin: 5px;'>";
+    $html .= "<label for='lnk_programa_redes_youtube'>Youtube: </label>";
+    $html .= "<input type='text' id='lnk_programa_redes_youtube' name='lnk_programa_redes_youtube' value='".$redes_youtube."' size='30' style='margin: 5px;'>";
+    $html .= "</div>";
+
+    $html .= "<div class='redes_input' style='margin: 5px;'>";
+    $html .= "<label for='lnk_programa_redes_twitter'>Twitter: </label>";
+    $html .= "<input type='text' id='lnk_programa_redes_twitter' name='lnk_programa_redes_twitter' value='".$redes_twitter."' size='30' style='margin: 5px;'>";
+    $html .= "</div>";
+
+    $html .= "<div class='redes_input' style='margin: 5px;'>";
+    $html .= "<label for='lnk_programa_redes_whatsapp'>Whatsapp: </label>";
+    $html .= "<input type='text' id='lnk_programa_redes_whatsapp' name='lnk_programa_redes_whatsapp' value='".$redes_whatsapp."' size='30' style='margin: 5px;'>";
+    $html .= "</div>";
+
+    $html .= "<div class='redes_input' style='margin: 5px;'>";
+    $html .= "<label for='lnk_programa_redes_telegram'>Telegram: </label>";
+    $html .= "<input type='text' id='lnk_programa_redes_telegram' name='lnk_programa_redes_telegram' value='".$redes_telegram."' size='30' style='margin: 5px;'>";
+    $html .= "</div>";
+
+    $html .= "</div>";
+    echo $html;
+}
+
+
 function lnk_programa_save_post_meta($id) {
     global $post_type;
     if($post_type == 'programa'){
@@ -203,6 +252,19 @@ function lnk_programa_save_post_meta($id) {
             update_post_meta($id, 'lnk_programa_produccion', $_POST['lnk_programa_produccion']);
         if(isset($_POST['lnk_programa_operacion']))
             update_post_meta($id, 'lnk_programa_operacion', $_POST['lnk_programa_operacion']);
-    }
+        // redes
+        if(isset($_POST['lnk_programa_redes_facebok']))
+            update_post_meta($id, 'lnk_programa_redes_facebook', $_POST['lnk_programa_redes_facebook']);
+        if(isset($_POST['lnk_programa_redes_instagram']))
+            update_post_meta($id, 'lnk_programa_redes_instagram', $_POST['lnk_programa_redes_instagram']);
+        if(isset($_POST['lnk_programa_redes_youtube']))
+            update_post_meta($id, 'lnk_programa_redes_youtube', $_POST['lnk_programa_redes_youtube']);
+        if(isset($_POST['lnk_programa_redes_twitter']))
+            update_post_meta($id, 'lnk_programa_redes_twitter', $_POST['lnk_programa_redes_twitter']);
+        if(isset($_POST['lnk_programa_redes_whatsapp']))
+            update_post_meta($id, 'lnk_programa_redes_whatsapp', $_POST['lnk_programa_redes_whatsapp']);
+        if(isset($_POST['lnk_programa_redes_telegram']))
+            update_post_meta($id, 'lnk_programa_redes_telegram', $_POST['lnk_programa_redes_telegram']);
+   }
 }
 add_action('save_post','lnk_programa_save_post_meta');
