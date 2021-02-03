@@ -188,8 +188,8 @@ function lnk_programa_redes_meta_box() {
     $redes_instagram = get_post_meta( $post->ID, 'lnk_programa_redes_instagram', true );
     $redes_youtube = get_post_meta( $post->ID, 'lnk_programa_redes_youtube', true );
     $redes_twitter = get_post_meta( $post->ID, 'lnk_programa_redes_twitter', true );
-    $redes_whatsapp = get_post_meta( $post->ID, 'lnk_programa_whatsapp', true );
-    $redes_telegram = get_post_meta( $post->ID, 'lnk_programa_telegram', true );
+    $redes_whatsapp = get_post_meta( $post->ID, 'lnk_programa_redes_whatsapp', true );
+    $redes_telegram = get_post_meta( $post->ID, 'lnk_programa_redes_telegram', true );
         
     $html = "<div class='redes_container'>";
     
@@ -208,7 +208,7 @@ function lnk_programa_redes_meta_box() {
     $html .= "<div class='redes_input' style='margin: 5px;'>";
     $html .= "<label for='lnk_programa_redes_youtube'>Youtube: </label>";
     $html .= "<input type='text' id='lnk_programa_redes_youtube' name='lnk_programa_redes_youtube' value='".$redes_youtube."' size='30' style='margin: 5px;'>";
-    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Dirección completa al canal)</span>";
+    $html .= "<span class='redes_descr' style='font-size:0.8em;color:#555;'>(Dirección completa al canal/playlist)</span>";
     $html .= "</div>";
 
     $html .= "<div class='redes_input' style='margin: 5px;'>";
@@ -259,7 +259,7 @@ function lnk_programa_save_post_meta($id) {
         if(isset($_POST['lnk_programa_operacion']))
             update_post_meta($id, 'lnk_programa_operacion', $_POST['lnk_programa_operacion']);
         // redes
-        if(isset($_POST['lnk_programa_redes_facebok']))
+        if(isset($_POST['lnk_programa_redes_facebook']))
             update_post_meta($id, 'lnk_programa_redes_facebook', $_POST['lnk_programa_redes_facebook']);
         if(isset($_POST['lnk_programa_redes_instagram']))
             update_post_meta($id, 'lnk_programa_redes_instagram', $_POST['lnk_programa_redes_instagram']);
