@@ -45,9 +45,11 @@ function lnk_programa_create_type(){
             "map_meta_cap" => true
         )
     );
+    remove_post_type_support( 'programa', 'editor');
+    add_post_type_support('programa', array('thumbnail','excerpt'));
 }
 add_action('init', 'lnk_programa_create_type');
-add_post_type_support('programa', array('thumbnail','excerpt'));
+
 
 function lnk_programa_disable_gutenberg($current_status, $post_type)
 {
